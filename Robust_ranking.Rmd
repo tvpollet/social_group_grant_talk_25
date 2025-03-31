@@ -1,0 +1,144 @@
+---
+title: "Are university rankings robust? An exploration with a Robust Ranking Method"
+author: "Thomas Pollet, Merim Bilalić and Lee Shepherd <br> Northumbria University <br><br> (thomas.pollet@northumbria.ac.uk)"
+date: "`r format(Sys.Date())` | [disclaimer](http://tvpollet.github.io/disclaimer)"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r echo=F, message=F, warning = F}
+require(xaringanExtra) 
+require(stargazer)
+require(tidyverse)
+require(knitr)
+require(kableExtra)
+require(DT)
+```
+
+```{r xaringan-logo, echo=FALSE}
+xaringanExtra::use_logo("NU2.png")
+```
+
+```{r xaringan-tile-view, echo=FALSE}
+xaringanExtra::use_tile_view()
+# Below generates a new class of simulation table, as otherwise it will not fit.
+```
+
+```{css, echo = F}
+table {
+  font-size: 16px;     
+}
+```
+
+```{css, echo = F}
+.table_small table {
+  font-size: 5.9px;     
+}
+```
+
+```{css, echo = F}
+.table_red table {
+  font-size: 10px;     
+}
+```
+
+## Today
+
+* Work in progress.
+
+* An outline 
+
+```{r, out.width = "400px", echo=FALSE, fig.align='center'}
+knitr::include_graphics("https://media.giphy.com/media/n6ljtq0aO6Zqg/giphy.gif") 
+```
+
+---
+## Methodology
+
+* I really like 'quirky' quantitative methods.
+
+--
+
+* Interested in metrics.
+
+```{r, out.width = "400px", echo=FALSE, fig.align='center'}
+knitr::include_graphics("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXU0NmJqaHlrem5lYW1lZmpmOXp6amJwa2x1b211eW8za2dvZXR3dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7rfwKxzvH22cg/giphy.gif") 
+```
+
+---
+## Ubiquitous rankings
+
+* Top Lists (Songs, Drafts in sports, Movies, Places to visit)
+
+--
+
+* University of the Year... . (Times Higher Education, QS, Shanghai)
+
+```{r, out.width = "400px", echo=FALSE, fig.align='center'}
+knitr::include_graphics("https://media.giphy.com/media/l2JecohhBypyIabXq/giphy.gif") 
+```
+
+---
+## Found a hammer...
+
+* [Robust Ranking Aggregation (RRA) Method](https://doi.org/10.1177/2515245923121861). 
+
+--> Use case: Meta-analysis of gene lists.
+
+
+```{r, out.width = "450px", echo=FALSE, fig.align='center'}
+knitr::include_graphics("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGxnczQyNXNlMTJucnYxODk3eXUxN3JiN3plamV1Yjl0b3NsamtjNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/10dHotK4K8R0AM/giphy.gif") 
+```
+
+---
+## Current work on rankings
+
+* 
+
+---
+## Target Leverhulme / ESRC secondary data analysis
+
+---
+## Moving forward... 
+
+* More awareness of limitations of rankings?
+
+```{r, out.width = "450px", echo=FALSE, fig.align='center'}
+knitr::include_graphics("https://media.giphy.com/media/3ohc0PrdNeYvAzGa76/giphy.gif")
+```
+
+
+---
+## Any Questions?
+
+[http://tvpollet.github.io](http://tvpollet.github.io)
+
+Twitter: @tvpollet
+
+```{r, out.width = "600px", echo=FALSE, fig.align='center'}
+knitr::include_graphics("https://media.giphy.com/media/3ohzdRoOp1FUYbtGDu/giphy.gif")
+```
+
+---
+## Acknowledgments
+
+* I am greatly indebted to my collaborators (Or I will be ;)). (Any mistakes are my own!).
+
+* You for listening!
+
+```{r, out.width = "500px", echo=FALSE, fig.align='center'}
+knitr::include_graphics("https://media.giphy.com/media/10avZ0rqdGFyfu/giphy.gif")
+```
+
+
+

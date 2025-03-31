@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Battle of the best: Testing rankings via simulations</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Thomas Pollet (thomas.pollet@northumbria.ac.uk)" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Battle of the best: Testing rankings via simulations
+]
+.author[
+### Thomas Pollet (<a href="mailto:thomas.pollet@northumbria.ac.uk" class="email">thomas.pollet@northumbria.ac.uk</a>)
+]
+.date[
+### 2025-03-28 | <a href="http://tvpollet.github.io/disclaimer">disclaimer</a>
+]
+
+---
+
+
+
+
+
+
+<div>
+<style type="text/css">.xaringan-extra-logo {
+width: 110px;
+height: 128px;
+z-index: 0;
+background-image: url(NU2.png);
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+top:1em;right:1em;
+}
+</style>
+<script>(function () {
+  let tries = 0
+  function addLogo () {
+    if (typeof slideshow === 'undefined') {
+      tries += 1
+      if (tries < 10) {
+        setTimeout(addLogo, 100)
+      }
+    } else {
+      document.querySelectorAll('.remark-slide-content:not(.title-slide):not(.inverse):not(.hide_logo)')
+        .forEach(function (slide) {
+          const logo = document.createElement('div')
+          logo.classList = 'xaringan-extra-logo'
+          logo.href = null
+          slide.appendChild(logo)
+        })
+    }
+  }
+  document.addEventListener('DOMContentLoaded', addLogo)
+})()</script>
+</div>
+
+
+
+&lt;style type="text/css"&gt;
+table {
+  font-size: 16px;     
+}
+&lt;/style&gt;
+
+&lt;style type="text/css"&gt;
+.table_small table {
+  font-size: 5.9px;     
+}
+&lt;/style&gt;
+
+&lt;style type="text/css"&gt;
+.table_red table {
+  font-size: 10px;     
+}
+&lt;/style&gt;
+
+## Today
+
+An outline of what I am considering putting together as a grant.
+
+&lt;img src="https://media.giphy.com/media/n6ljtq0aO6Zqg/giphy.gif" width="400px" style="display: block; margin: auto;" /&gt;
+
+---
+## Methodology
+
+* I really, really like 'quirky' quantitative methods.
+
+--
+
+* Interested in metrics and rankings --&gt; particular their uncritical use.
+
+&lt;img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXU0NmJqaHlrem5lYW1lZmpmOXp6amJwa2x1b211eW8za2dvZXR3dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7rfwKxzvH22cg/giphy.gif" width="400px" style="display: block; margin: auto;" /&gt;
+
+---
+## Ubiquitous rankings
+
+* Top Lists (Songs, Drafts in sports, Movies, Places to visit)
+
+--
+
+* University of the Year... . (Times Higher Education, QS, Shanghai)
+
+--
+
+* Happiest country / Healthiest country / etc.
+
+&lt;img src="https://media.giphy.com/media/l2JecohhBypyIabXq/giphy.gif" width="400px" style="display: block; margin: auto;" /&gt;
+
+---
+## Found a hammer...
+
+* [Robust Ranking Aggregation (RRA) Method](https://doi.org/10.1177/2515245923121861). 
+
+--&gt; Use case: Meta-analysis of gene lists. -- How to synthesise across many lists of varying length
+
+
+&lt;img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGxnczQyNXNlMTJucnYxODk3eXUxN3JiN3plamV1Yjl0b3NsamtjNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/10dHotK4K8R0AM/giphy.gif" width="450px" style="display: block; margin: auto;" /&gt;
+
+---
+## Current work on rankings
+
+* [Preprint on Guardian and Complete University Guide rankings](https://osf.io/preprints/psyarxiv/fdkj5_v1) - discrepancies between institution and subject rankings.
+
+--
+
+* Working on draft on GPA rank in REF (Times Higher Education Rankings)
+
+&lt;img src="ucl_kings.jpeg" width="350px" style="display: block; margin: auto;" /&gt;
+
+???
+Some correspondence! But not when it comes to movements up and down ... .
+
+---
+## Just a sliver from that working draft
+
+GPA ranking (129 institutions) and a Robust Ranking Aggregation (RRA) method across units of assessment.
+
+&lt;img src="russell_2021_RRA.png" width="400px" style="display: block; margin: auto;" /&gt;
+
+
+---
+## Target Leverhulme / ESRC secondary data analysis
+
+* Expand on this work
+
+--
+
+* Pragmatically: I need to bring in some funds.
+
+&lt;img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWpya3hhdnFtbzZjeGo5c21yMzc1MDhzZ3ZpZDl4ZDRiY3NpM3BvZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/qi8Yhj4pKcIec/giphy.gif" width="400px" style="display: block; margin: auto;" /&gt;
+
+
+---
+## Core idea
+
+Let's use simulations to better understand the nature of rankings.
+
+--
+
+We will borrow from literature on animal dominance hierarchies. **Wait for it**
+
+&lt;img src="grok_animal_hierarchy.jpg" width="350px" style="display: block; margin: auto;" /&gt;
+
+
+---
+## Why? Rankings are typically sh*t
+
+* Don't convey much information on gaps between top and bottom. Inequality
+
+--
+
+* Typically stationary -- movements hard to distinguish from noise?
+
+--
+
+--&gt; We could do better as a lot of smart people have worked on how to generate rankings hierarchies!
+
+---
+## Animal hierarchy work
+
+Three descriptors:
+
+* **Steepness**:
+
+Degree to which dominant individuals monopolize resources or control subordinates.
+
+* **Linearity**: 
+
+Each individual dominates those below and is subordinate to those above (A &gt; B &gt; C &gt; D). Common in many species (e.g., wolves).
+
+Non-linear: Some relationships violate the rules of transitivity (A dominates B, B dominates C, but C dominates A). (e.g., Chimpanzees, De Waal's (1982) chimpanzee's politics)
+
+* **Temporal stability**: 
+
+Frequent changes at the top versus rare changes.
+
+---
+## Elo Ratings 
+
+* Arpad Elo in Chess.
+
+--
+
+* Elo system: skill can be represented by a single number, **a rating** 
+
+--
+
+* A higher rating --&gt; greater skill. 
+
+--
+
+* Difference in ratings between two players predicts the expected probability of one defeating the other. 
+
+--
+
+After a game, ratings are updated based on the actual result compared to this expectation:
+
+--
+
+--&gt; If you beat a stronger opponent, your rating increases more than if you beat a weaker one.
+If you lose to a weaker opponent, your rating drops more than if you lose to a stronger one.
+
+**Result:** a self-correcting system that converges toward a player’s true skill level over time.
+
+---
+## Common in 'sports' and e-sports
+
+Sometimes these involve variations (Glicko / Glicko2 / Microsoft Trueskill).
+
+* Chess / Go 
+
+--
+
+* E-sports (League of Legends, Halo, CS:GO)
+
+--
+
+Sports: Tennis, Football / Rugby, Badminton, etc
+
+&lt;img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmRsNmFvY2p4c2d0Nm04cDA2a3c0MnhmaXF3NXJla2pnc2F0a3B4dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/t3sZxY5zS5B0z5zMIz/giphy.gif" width="350px" style="display: block; margin: auto;" /&gt;
+
+???
+"_The core idea is that a rating alone doesn’t tell the full story—how confident we are in that rating matters too._" / Glicko-2 adds a third parameter: rating volatility (`\(\sigma\)`). This makes it even more sophisticated by modeling how much a player’s skill might fluctuate over time, addressing a key limitation of Glicko where skill was assumed to be relatively stable.
+
+---
+## An illustration
+
+**Thomas opens Rstudio**
+
+&lt;img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExa3J6aGRqbHY4MGdiYWowd256ZnMyeWVzZnRyZ2JwYnRucmYwM3Z1cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Y1f0mFqAAeNv9VJNgT/giphy.gif" width="350px" style="display: block; margin: auto;" /&gt;
+
+???
+Built with AI in less than 1h
+
+---
+## Lots of work in this area... 
+
+Likely I'll focus on `EloRatings` and `eloSteepness`
+
+&lt;img src="MEE_elo_steepness.png" width="350px" style="display: block; margin: auto;" /&gt;
+
+---
+## My proposal
+
+Examine hierarchies with an Elo rating approach in three domains:
+
+* Universities based on Student satisfaction (NSS)
+
+* Countries based on Happiness
+
+* Countries based on self-rated health (?) --&gt; Open to alternatives comparing hospitals? schools (OFSTED ratings)? Education in schools (PISA scores)
+
+--&gt; Mostly exploratory - does it change some narratives.
+
+---
+## National Student Survey
+
+Via freedom of info requests I have obtained the **raw** data underpinning the NSS.
+
+--&gt; raw responses - depending on year some sociodemographics
+
+&lt;img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXFmYnVtZGx1cXozaHBuc3djMnZkdHFpaXc4MGxvdzZ4ZmVzMGhpMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/6901DbEbbm4o0/giphy.gif" width="350px" style="display: block; margin: auto;" /&gt;
+
+---
+## NSS: Battle of the best
+
+* Example of a single round: we sample a student response from psychology from Northumbria University and one from Newcastle university.
+
+--
+
+* We then randomly pick an NSS item which is scored 1 - 4 and the University with highest score gets the point. 
+
+--
+
+* repeat ad nauseam... . --&gt; different institutions ; Like a chess or other tournament.
+
+&lt;img src="posh_vs_poly.jpg" width="300px" style="display: block; margin: auto;" /&gt;
+
+---
+## NSS: Extensions
+
+- We can impose further rules: e.g., full-time must play against full-time, same gender, etc. Or not specify those rules to see if it matters.
+
+--
+
+- Via manipulating the rules of the game we can gain insights into the limits of the system (clear win or no clear win, e.g. 2 points difference or only 1, etc)
+
+&lt;img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTFiNTkxcjcyOWswZ2x6ZmV2ZDlmZjg5anZxeHVzbzlodjV3OWpxNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/4eB8YoyfzhG0mSEwWT/giphy.gif" width="400px" style="display: block; margin: auto;" /&gt;
+
+---
+## Happiness / life satisfaction
+
+Gallup has a world happiness report.
+
+&lt;img src="Happiness_Around_the_World_2025.png" width="450px" style="display: block; margin: auto;" /&gt;
+
+source: [https://www.gallup.com/analytics/349487/world-happiness-report.aspx](https://www.gallup.com/analytics/349487/world-happiness-report.aspx)
+---
+## EU data
+
+&lt;img src="EU_life_satisfaction.png" width="450px" style="display: block; margin: auto;" /&gt;
+
+source: [https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20240115-1](https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20240115-1)
+
+---
+## European Social Survey
+
+Happiness
+C1. Taking all things together, how happy would you say you are?
+
+Extremely unhappy	
+Extremely happy
+
+00	01	02	03	04	05	06	07	08	09	10
+
+Life Satisfaction
+B20. All things considered, how satisfied are you with your life as a whole nowadays? Please answer using this card, where 0 means extremely dissatisfied and 10 means extremely satisfied.
+
+Extremely dissatisfied	
+Extremely satisfied
+
+00	01	02	03	04	05	06	07	08	09	10
+
+&lt;img src="ESS.jpg" width="200px" style="display: block; margin: auto;" /&gt;
+
+---
+## Self-rated health
+
+**Adults rating their own health as bad or very bad, 2021 (or latest year)**
+
+&lt;img src="OECD_ranking.png" width="450px" style="display: block; margin: auto;" /&gt;
+
+source: [OECD, Health at a glance 2023](https://www.oecd.org/en/publications/health-at-a-glance-2023_7a7afb35-en/full-report/self-rated-health_ff2c161e.html)
+
+---
+## Data resource
+
+[SHARE](https://share-eric.eu/search-results/result) : The Survey of Health, Ageing and Retirement in Europe (SHARE) 
+
+A multidisciplinary, cross-national panel study focused on individuals aged 50 and older across 28 European countries and Israel. --&gt; allows time component
+
+&lt;img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnpoaHhudmp2c2VwYXRscGt0dG15NmoyNnY5cGpoanFzZGdjZWU5bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT9C25UNTwfZuk85WP/giphy.gif" width="450px" style="display: block; margin: auto;" /&gt;
+
+---
+## Self-rated Health
+
+**General Self-Rated Health (Global SRH)**
+Question: "How would you rate your health in general?"
+Response Options: Respondents choose from a five-point scale:
+Excellent
+Very Good
+Good
+Fair
+Poor
+
+--
+
+**Comparison to Others (Relative SRH)**
+Question: "How would you rate your health compared to other people your age?"
+Response Options: Typically a five-point scale:
+Much Better
+Somewhat Better
+About the Same
+Somewhat Worse
+Much Worse
+
+
+???
+Details: This is a standard single-item measure, asked consistently across all waves (e.g., Wave 1 in 2004 through Wave 9 in 2023). It captures an overall subjective assessment of health, reflecting physical, mental, and functional aspects as perceived by the individual. In some waves, particularly for U.S.-harmonized versions (aligned with the U.S. Health and Retirement Study), the question may be phrased as "Would you say your health is..." with the same response scale.
+
+Details: This item appears in certain waves (e.g., Wave 1 and subsequent waves as part of the health module) and provides a relative perspective, allowing researchers to assess how individuals perceive their health in the context of their peers. It complements the global SRH by adding a comparative dimension.
+
+---
+## SHARE expansions
+
+* Activities of Daily Living (ADL) and Instrumental Activities of Daily Living (IADL)
+
+--
+
+* Mental health measure (Euro-D)
+
+--
+
+* Questions about conditions
+
+--
+
+* Health behaviour (smoking, drinking, exercise, etc)
+
+&lt;img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYmc0ZmY2bzVuZWt0NDdnZnRsNXo5bTUzbXNzenRmMHZwZXM2OTRxaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/GSE1BzJG4JVbq/giphy.gif" width="450px" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+## SWOT --&gt; Thomas is disgusted with himself...
+
+* **Strengths**: Novel technique / cross-fertilisation, relatively assumption free?
+
+--
+
+* **Weaknesses**: 'Garbage in, Garbage out', small samples lead to pseudoreplication, Controversial?,
+
+--
+
+* **Opportunities**: Make some 'Shiny' Visualisations, other datasets (ELSA, etc), ... .
+
+--
+
+* **Threats**: Finding someone who will like this? / replacing ranking with someone else
+
+&lt;img src="SWOT.jpg" width="200px" style="display: block; margin: auto;" /&gt;
+
+---
+## Moving forward... 
+
+* More awareness of limitations of rankings?
+
+&lt;img src="https://media.giphy.com/media/3ohc0PrdNeYvAzGa76/giphy.gif" width="450px" style="display: block; margin: auto;" /&gt;
+
+
+---
+## Any Questions?
+
+[http://tvpollet.github.io](http://tvpollet.github.io)
+
+Twitter: @tvpollet
+
+&lt;img src="https://media.giphy.com/media/3ohzdRoOp1FUYbtGDu/giphy.gif" width="600px" style="display: block; margin: auto;" /&gt;
+
+---
+## Acknowledgments
+
+* I am greatly indebted to my collaborators (Or I will be ;)). (Any mistakes are my own!).
+
+* You for listening!
+
+&lt;img src="https://media.giphy.com/media/10avZ0rqdGFyfu/giphy.gif" width="500px" style="display: block; margin: auto;" /&gt;
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create();
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();</script>
+<!-- libs/insert_shiny.html -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var iframes = document.getElementsByTagName('iframe');
+  for (var i = 0; i < iframes.length; i++) {
+    iframes[i].onload = function() {
+      try {
+        this.contentWindow.focus();
+      } catch(err) {
+        console.warn('Could not focus iframe:', err);
+      }
+    };
+  }
+});
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
