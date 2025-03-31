@@ -243,11 +243,11 @@ knitr::include_graphics("https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmRsN
 "_The core idea is that a rating alone doesn’t tell the full story—how confident we are in that rating matters too._" / Glicko-2 adds a third parameter: rating volatility ($\sigma$). This makes it even more sophisticated by modeling how much a player’s skill might fluctuate over time, addressing a key limitation of Glicko where skill was assumed to be relatively stable.
 
 ---
-## An illustration
+## An illustration with some simulations
 
 **Thomas opens Rstudio**
 
-```{r out.width = "350px", echo=FALSE, fig.align='center'}
+```{r out.width = "400px", echo=FALSE, fig.align='center'}
 knitr::include_graphics("https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExa3J6aGRqbHY4MGdiYWowd256ZnMyeWVzZnRyZ2JwYnRucmYwM3Z1cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Y1f0mFqAAeNv9VJNgT/giphy.gif")
 ```
 
@@ -257,9 +257,11 @@ Built with AI in less than 1h
 ---
 ## Lots of work in this area... 
 
+They want to figure out animal dominance hierarchies... .
+
 Likely I'll focus on `EloRatings` and `eloSteepness`
 
-```{r out.width = "350px", echo=FALSE, fig.align='center'}
+```{r out.width = "400px", echo=FALSE, fig.align='center'}
 knitr::include_graphics("MEE_elo_steepness.png")
 ```
 
@@ -268,9 +270,15 @@ knitr::include_graphics("MEE_elo_steepness.png")
 
 Examine hierarchies with an Elo rating approach in three domains:
 
+--
+
 * Universities based on Student satisfaction (NSS)
 
+--
+
 * Countries based on Happiness
+
+--
 
 * Countries based on self-rated health (?) --> Open to alternatives comparing hospitals? schools (OFSTED ratings)? Education in schools (PISA scores)
 
@@ -279,11 +287,11 @@ Examine hierarchies with an Elo rating approach in three domains:
 ---
 ## National Student Survey
 
-Via freedom of info requests I have obtained the **raw** data underpinning the NSS.
+Via freedom of info requests I have obtained the **raw** individual level data underpinning the NSS.
 
 --> raw responses - depending on year some sociodemographics
 
-```{r out.width = "350px", echo=FALSE, fig.align='center'}
+```{r out.width = "400px", echo=FALSE, fig.align='center'}
 knitr::include_graphics("https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXFmYnVtZGx1cXozaHBuc3djMnZkdHFpaXc4MGxvdzZ4ZmVzMGhpMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/6901DbEbbm4o0/giphy.gif")
 ```
 
@@ -313,7 +321,7 @@ knitr::include_graphics("posh_vs_poly.jpg") # from posh vs poly FB group
 
 - Via manipulating the rules of the game we can gain insights into the limits of the system (clear win or no clear win, e.g. 2 points difference or only 1, etc)
 
-```{r, out.width = "400px", echo=FALSE, fig.align='center'}
+```{r, out.width = "450px", echo=FALSE, fig.align='center'}
 knitr::include_graphics("https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTFiNTkxcjcyOWswZ2x6ZmV2ZDlmZjg5anZxeHVzbzlodjV3OWpxNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/4eB8YoyfzhG0mSEwWT/giphy.gif")
 ```
 
@@ -358,6 +366,9 @@ Extremely satisfied
 ```{r, out.width = "200px", echo=FALSE, fig.align='center'}
 knitr::include_graphics("ESS.jpg")
 ```
+
+???
+These correlate .7
 
 ---
 ## Self-rated health
@@ -440,7 +451,7 @@ knitr::include_graphics("https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYmc0Z
 
 --
 
-* **Weaknesses**: 'Garbage in, Garbage out', small samples lead to pseudoreplication, Controversial?,
+* **Weaknesses**: 'Garbage in, Garbage out', small samples lead to pseudoreplication, Controversial?, assumes we can still rank.
 
 --
 
@@ -448,7 +459,7 @@ knitr::include_graphics("https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYmc0Z
 
 --
 
-* **Threats**: Finding someone who will like this? / replacing ranking with someone else
+* **Threats**: Finding someone who will like this? / replacing ranking with something else
 
 ```{r, out.width = "200px", echo=FALSE, fig.align='center'}
 knitr::include_graphics("SWOT.jpg")
@@ -457,7 +468,9 @@ knitr::include_graphics("SWOT.jpg")
 ---
 ## Moving forward... 
 
-* More awareness of limitations of rankings?
+* More awareness of limitations of rankings? Visualisation dashboard.
+
+* Rolling in cash... .
 
 ```{r, out.width = "450px", echo=FALSE, fig.align='center'}
 knitr::include_graphics("https://media.giphy.com/media/3ohc0PrdNeYvAzGa76/giphy.gif")
